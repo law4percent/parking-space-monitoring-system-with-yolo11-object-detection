@@ -9,6 +9,9 @@ def main():
     cap = psms.load_camera("inference/demo.mp4")
     success = True
     frame_name = "PSMS"
+    wait_key = 1
+    ord_key = 'q'
+
 
     while success:
         ret, frame = cap.read()
@@ -20,7 +23,7 @@ def main():
         frame, zones_list = psms.track_objects_in_zones(frame, boxes, zones, zones_list, class_names)
 
         psms.display_zone_info(frame, number_of_zones, zones_list) # Optional
-        success = psms.show_frame(frame, frame_name, wait_key=0) # Optional
+        success = psms.show_frame(frame, frame_name, wait_key, ord_key) # Optional
 
     cap.release()
     cv2.destroyAllWindows()
