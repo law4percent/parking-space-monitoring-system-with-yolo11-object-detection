@@ -6,6 +6,12 @@ This project demonstrates a Parking Space Monitoring System powered by YOLO11, a
 ## Download the video 👇
 https://mega.nz/file/4w0UCRyJ#TV55n4q-1j4jLCHtT_jmDZjMGdvny0-4Nlj8hAImd7Y 
 
+## Sample
+![image](https://github.com/user-attachments/assets/520a6112-42c4-4885-ba5b-ce5062bf4eee)
+
+## Recommend Tool for Creating Zones
+https://law4percent.github.io/draw-polygons-for-computer-vision/
+
 ## Disclaimer
 - I do not own the video. I was used it just for demonstration for this project.
 - The yolo model used for this project was "yolo11n.pt" which I downloaded here 👉https://docs.ultralytics.com/models/yolo11/#supported-tasks-and-modes .
