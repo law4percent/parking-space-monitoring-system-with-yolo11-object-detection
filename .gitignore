@@ -1,0 +1,4 @@
+venv
+src/psms_lib/__pycache__
+src/model/yolo11n.pt
+inference/demo.mp4
