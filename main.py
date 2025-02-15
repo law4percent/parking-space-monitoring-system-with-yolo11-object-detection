@@ -25,7 +25,14 @@ def main():
         psms.draw_polylines_zones(frame, zones) # Optional
         frame, zones_list = psms.track_objects_in_zones(frame, boxes, zones, zones_list, class_names)
 
-        psms.display_zone_info(frame, number_of_zones, zones_list) # Optional
+        numb_of_occupied = psms.count_occupied_space(number_of_zones, zones_list)
+
+        data_to_display = {
+            "numb_of_occupied": numb_of_occupied,
+            "number_of_zones": number_of_zones
+        }
+
+        psms.display_zone_info(frame, data_to_display) # Optional
         success = psms.show_frame(frame, frame_name, wait_key, ord_key) # Optional
 
     cap.release()

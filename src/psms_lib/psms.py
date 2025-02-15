@@ -146,17 +146,20 @@ def show_frame(frame, frame_name, wait_key=1, ord_key='q'):
         return False
     return True
 
-def display_zone_info(frame, number_of_zones, zones_list, color=(255, 255, 255), fontScale=0.75, thickness=2):
-    
+def count_occupied_space(number_of_zones, zones_list):
     count_occupied = 0
     for index in range(number_of_zones):
         if zones_list[index]:
             count_occupied += 1
+    return count_occupied
 
-    # for zone_indx in range(number_of_zones):
+def display_zone_info(frame, data_to_display, color=(255, 255, 255), fontScale=0.75, thickness=2):
+    number_of_zones = data_to_display["number_of_zones"]
+    numb_of_occupied = data_to_display["numb_of_occupied"]
+
     cv2.putText(
                 frame,
-                f"vacant: {number_of_zones - count_occupied}",
+                f"vacant: {number_of_zones - numb_of_occupied}",
                 (25, 25),
                 cv2.FONT_HERSHEY_SIMPLEX,
                 fontScale,
@@ -165,7 +168,7 @@ def display_zone_info(frame, number_of_zones, zones_list, color=(255, 255, 255),
             )
     cv2.putText(
                 frame,
-                f"occupied: {count_occupied}",
+                f"occupied: {numb_of_occupied}",
                 (25, 25 + 28),
                 cv2.FONT_HERSHEY_SIMPLEX,
                 fontScale,
