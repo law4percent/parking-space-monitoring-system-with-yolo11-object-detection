@@ -16,6 +16,9 @@ def main():
     while success:
         ret, frame = cap.read()
 
+        if not ret:
+            break
+
         zones_list = psms.init_zone_list(number_of_zones)
         frame = cv2.resize(frame, (frame_width, frame_height))
         boxes = psms.get_prediction_boxes(frame, yolo_model, 0.15)
